@@ -1,0 +1,13 @@
+join Ghost 1
+Ghost: You've summoned me!
+- EEK!!!
+	Ghost: BOO! hahaha \:)
+- I'm not scared of you!
+	Ghost: Good, I don't want you to be!
+- Make me BIG!
+	Ghost: I CAST EMBIGGIFY!
+	[signal arg="wish_for_big"]
+	Ghost: Congrats!
+Ghost: Goodbye!
+[signal arg="done"]
+[end_timeline]

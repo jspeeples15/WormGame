@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://clohms73fs8cy"]
+
+[ext_resource type="Script" path="res://Environment/Scripts/test_prop.gd" id="1_bwas6"]
+[ext_resource type="Texture2D" uid="uid://ciwt75y836fpx" path="res://Environment/Sprites/TX Props.png" id="1_p8p2k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uw81n"]
+texture = ExtResource("1_p8p2k")
+texture_region_size = Vector2i(32, 32)
+7:7/size_in_atlas = Vector2i(1, 2)
+7:7/0 = 0
+9:7/size_in_atlas = Vector2i(1, 2)
+9:7/0 = 0
+7:9/size_in_atlas = Vector2i(1, 2)
+7:9/0 = 0
+13:0/size_in_atlas = Vector2i(3, 3)
+13:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_iqavq"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_uw81n")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o43nf"]
+radius = 75.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx67m"]
+size = Vector2(29.25, 11.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h33x"]
+size = Vector2(17.625, 7.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4wr7"]
+size = Vector2(29.25, 10.25)
+
+[node name="TestProp" type="StaticBody2D"]
+z_index = 1
+texture_filter = 1
+scale = Vector2(4, 4)
+collision_layer = 4
+collision_mask = 15
+script = ExtResource("1_bwas6")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(16, -16)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 9, 0, 0, 0, 254, 255, 0, 0, 0, 0, 9, 0, 7, 0, 0, 0)
+tile_set = SubResource("TileSet_iqavq")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="InteractionCollider" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_o43nf")
+
+[node name="LeftGraveCollider" type="CollisionShape2D" parent="."]
+position = Vector2(-32.125, 14.625)
+shape = SubResource("RectangleShape2D_rx67m")
+
+[node name="RightGraveCollider" type="CollisionShape2D" parent="."]
+position = Vector2(31.6875, 14.375)
+shape = SubResource("RectangleShape2D_3h33x")
+
+[node name="TopGraveCollider" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -16.125)
+shape = SubResource("RectangleShape2D_y4wr7")

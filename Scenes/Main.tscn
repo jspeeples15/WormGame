@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://cvdubmuo5d1vf"]
+[gd_scene load_steps=6 format=4 uid="uid://cvdubmuo5d1vf"]
 
 [ext_resource type="Texture2D" uid="uid://lq6m03uqvmj4" path="res://Environment/Sprites/TX Tileset Grass.png" id="1_33y4w"]
 [ext_resource type="PackedScene" uid="uid://dy1iumtmlcyrv" path="res://Scenes/Player.tscn" id="2_frqot"]
+[ext_resource type="PackedScene" uid="uid://clohms73fs8cy" path="res://Environment/TestProp.tscn" id="3_6h3ak"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o86ed"]
 texture = ExtResource("1_33y4w")
@@ -84,8 +85,15 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAEAAAACAAIAAAACAAEAAAAGAAM
 tile_set = SubResource("TileSet_4ao35")
 
 [node name="Player" parent="." instance=ExtResource("2_frqot")]
+z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="TestProp" parent="." instance=ExtResource("3_6h3ak")]
+position = Vector2(735, 446)
+
+[connection signal="interacting" from="Player" to="Player" method="_on_interacting"]
+[connection signal="interacting" from="Player" to="TestProp" method="_on_player_interacting"]
