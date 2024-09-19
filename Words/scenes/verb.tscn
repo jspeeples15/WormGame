@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk1gs3cym432w"]
+
+[ext_resource type="PackedScene" uid="uid://dyysmvn7d650o" path="res://Words/scenes/word.tscn" id="1_d278u"]
+[ext_resource type="Script" path="res://Words/scripts/verb.gd" id="1_mg0lv"]
+
+[node name="Verb" instance=ExtResource("1_d278u")]
+script = ExtResource("1_mg0lv")
+effects = Array[String]([])
+label = "Verb"
+color = Color(0, 0.619608, 0.921569, 1)

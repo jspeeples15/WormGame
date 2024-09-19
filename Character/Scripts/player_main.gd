@@ -5,11 +5,17 @@ extends CharacterBody2D
 var veloctiy : Vector2
 var direction : Vector2
 var is_interacting: bool
+var words: Array[Word] = []
+
 
 signal interacting
 
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	var enflame_scene = load("res://Words/scenes/Burn.tscn")
+	var enflame_verb = enflame_scene.instantiate()
+	words.append(enflame_verb)
+	print(words)
 
 func _physics_process(delta):
 	direction = Vector2.ZERO
@@ -51,7 +57,7 @@ func interact():
 			interaction_choice = overlapping_body
 			min_length_away = body_distance_squared
 	
-	interacting.emit(interaction_choice.name)
+	interacting.emit(interaction_choice.name, words[0].effects)
 
 
 func _on_interacting(interaction_choice: String) -> void:

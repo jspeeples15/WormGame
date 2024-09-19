@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyysmvn7d650o"]
+
+[ext_resource type="Script" path="res://Words/scripts/word.gd" id="1_dy5p0"]
+
+[node name="Word" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dy5p0")
+label = "BasicWord"
+color = Color(0, 0.560784, 0, 1)
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 40.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Example"

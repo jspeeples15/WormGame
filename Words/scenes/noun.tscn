@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn6efs2r01ywi"]
+
+[ext_resource type="PackedScene" uid="uid://dyysmvn7d650o" path="res://Words/scenes/word.tscn" id="1_f6e30"]
+[ext_resource type="Script" path="res://Words/scripts/noun.gd" id="2_shfs2"]
+
+[node name="Noun" instance=ExtResource("1_f6e30")]
+script = ExtResource("2_shfs2")
+traits = Array[String]([])
