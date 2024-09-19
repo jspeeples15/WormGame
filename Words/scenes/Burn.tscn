@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://q22hr8433c8r"]
+
+[ext_resource type="PackedScene" uid="uid://bk1gs3cym432w" path="res://Words/scenes/verb.tscn" id="1_tmmv8"]
+[ext_resource type="Script" path="res://Words/scripts/burn.gd" id="2_g0ce3"]
+
+[node name="Burn" instance=ExtResource("1_tmmv8")]
+script = ExtResource("2_g0ce3")
+effects = Array[String](["enflame"])
+label = ""
+color = Color(0, 0, 0, 1)
